@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            const submit = () => {
+                console.log('clicked');
+            }
+
+            let timeoutId;
+            const debounce = (fn, delay) => {
+                if (timeoutId) clearTimeout(timeoutId);
+                return () => {
+                    timeoutId = setTimeout(fn, delay);
+                    
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button type="button" onclick="debounce(submit, 1000)()"> Submit </button>
+    </body>
+</html>
